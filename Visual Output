@@ -1,0 +1,35 @@
+#include <RGBLed.h>
+
+RGBLed led(11, 10, 9, RGBLed::COMMON_CATHODE);
+
+void setup() { }
+
+void loop() {
+
+//g less than 3
+if(g<3){
+  	// Color is Green with brigthness 100%
+	led.setColor(0, 255, 0);
+	delay(200);}
+
+//g greater than or equal to 3 less than 6
+if(3>=g>6){
+  	// Color is yellow with brigthness 100%
+	led.setColor(255, 255, 0);
+	delay(200);}
+
+//g greater than or equal to 6 less than 7
+if(6>=g>7){
+// Color is red with brigthness 100%
+	led.setColor(RGBLed::RED);
+	delay(200);}
+
+//g greater than or equal to 7
+while(g>7){
+	// Flash red color, interval 100ms
+	led.flash(RGBLed::RED, 100);
+}
+
+//LED off
+//led.off();
+}
